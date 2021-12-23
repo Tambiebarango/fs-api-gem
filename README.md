@@ -23,7 +23,7 @@ Or install it yourself as:
 Initialize your client with
 
 ``` ruby
-client = Fullscriptapi.new do |c|
+client = Fullscriptapi.config do |c|
   c.client_id = "your_client_id" # obtain it from the api dashboard
   c.secret = "your_client_secret" # obtain it from the api dashboard
   c.redirect_uri = "your_apps_redirect_uri" # obtain it from the api dashboard
