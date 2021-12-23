@@ -7,5 +7,7 @@ require_relative 'endpoints/refresh_token'
 module Fullscriptapi
   module Endpoints
     include ListAllProducts
+    include CreateAnOauthToken
+    include RefreshToken
   end
 end
