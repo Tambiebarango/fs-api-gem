@@ -48,7 +48,32 @@ client.list_all_products
 client.create_an_oauth_token(grant) #you'll need your auth grant for this
 ```
 
-The method names on the `client` match the headings in the fuelscropt api documentation.
+The method names on the `client` match the snake case version of the headings in the fuelscropt api documentation.
+
+For example, the `List all Patients` heading will translate to `client.list_all_patients`.
+
+For endpoints that take an `id` parameter (could be `practitioner_id`, `patient_id`, etc) pass that `id` as a required parameter to the api call. This
+
+Example:
+
+``` ruby
+client.retrieve_a_patient(id: "patient_id")
+```
+
+For endpoints that require a `body` passed in, pass that `body` as a required parameter to the api call.
+
+Example:
+
+``` ruby
+client.create_a_patient(
+  body: {
+    first_name: "Testing",
+    last_name: "MyGem",
+    email: "test@mygem.com"
+  }
+)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

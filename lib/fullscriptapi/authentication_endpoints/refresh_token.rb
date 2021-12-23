@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Fullscriptapi
-  module Endpoints
+  module AuthenticationEndpoints
     module RefreshToken
       def refresh_token
-        response = Excon.post("#{get_server}/oauth/token",
+        response = Excon.post("#{get_server}/api/oauth/token",
           headers: {
             "Content-Type": "application/json"
           },
@@ -19,7 +19,6 @@ module Fullscriptapi
   
         body = JSON.parse(response.body)
   
-        pp body
         use_token(body["oauth"])
       end
     end

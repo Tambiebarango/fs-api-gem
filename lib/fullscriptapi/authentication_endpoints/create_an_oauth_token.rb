@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 module Fullscriptapi
-  module Endpoints
+  module AuthenticationEndpoints
     module CreateAnOauthToken
+      module_function
+
       def create_an_oauth_token(grant)
         # you need to have an auth grant to use this method
   
         raise unless client_id && secret && redirect_uri
   
-        response = Excon.post("#{get_server}/oauth/token",
+        response = Excon.post("#{get_server}/api/oauth/token",
           headers: {
             "Content-Type": "application/json"
           },

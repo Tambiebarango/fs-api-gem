@@ -13,3 +13,6 @@
 /demo
 *.gem
 *.gemspec
+
+# don't include our openapi spec
+openapi.json
