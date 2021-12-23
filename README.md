@@ -1,8 +1,6 @@
 # Fullscriptapi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fullscriptapi`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Are you building to Fuelscropt's API and is your stack in `ruby`? If so, here's a gem for you.
 
 ## Installation
 
@@ -22,8 +20,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize your client with
 
+``` ruby
+client = Fullscriptapi.new do |c|
+  c.client_id = "your_client_id" # obtain it from the api dashboard
+  c.secret = "your_client_secret" # obtain it from the api dashboard
+  c.redirect_uri = "your_apps_redirect_uri" # obtain it from the api dashboard
+  c.server = "dev" # choose one of us_prod, us_snd, ca_prod, ca_snd, dev
+end
+```
+
+Next provide a token hash for your client like this
+
+``` ruby
+client.use_token(
+  access_token: "access_token",
+  refresh_token: "refresh_token",
+  expires_in: 7200
+)
+```
+
+Then you're ready to make api calls like this:
+
+``` ruby
+client.list_all_products
+client.create_an_oauth_token(grant) #you'll need your auth grant for this
+```
+
+The method names on the `client` match the headings in the fuelscropt api documentation.
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
