@@ -1,22 +1,22 @@
 require_relative 'lib/fullscriptapi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fullscriptapi"
+  spec.name          = "fuelscropt-api-client"
   spec.version       = Fullscriptapi::VERSION
   spec.authors       = ["Theodore Ambie-Barango"]
   spec.email         = ["theodore.ambiebarango@fullscript.com"]
 
   spec.summary       = %q{This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.}
-  spec.description   = %q{This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.}
-  spec.homepage      = "https://theo.ngrok.io/home"
+  spec.description   = %q{This gem is designed to help consumers of the Fullscript API to be able to easily complete their builds.}
+  spec.homepage      = "https://github.com/Tambiebarango/fs-api-gem"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://theo.ngrok.io/source_code_uri"
-  spec.metadata["changelog_uri"] = "https://theo.ngrok.io/changelog_uri"
+  spec.metadata["source_code_uri"] = "https://github.com/Tambiebarango/fs-api-gem"
+  spec.metadata["changelog_uri"] = "https://github.com/Tambiebarango/fs-api-gem"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
