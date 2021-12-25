@@ -52,12 +52,12 @@ The method names on the `client` match the snake case version of the headings in
 
 For example, the `List all Patients` heading will translate to `client.list_all_patients`.
 
-For endpoints that take an `id` parameter (could be `practitioner_id`, `patient_id`, etc) pass that `id` as a required parameter to the api call. This
+For endpoints that take an `id` parameter (could be `practitioner_id`, `patient_id`, etc) pass that `id` as a required parameter in a nested `query` hash to the api call. This
 
 Example:
 
 ``` ruby
-client.retrieve_a_patient(id: "patient_id")
+client.retrieve_a_patient(query: { id: "patient_id" })
 ```
 
 For endpoints that require a `body` passed in, pass that `body` as a required parameter to the api call.

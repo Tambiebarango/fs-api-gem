@@ -75,8 +75,9 @@ module Fullscriptapi
         second_bracket = path.index('}')
 
         path_dup = path.dup
-        if args_hash.is_a?(Hash) && args_hash[:id] && first_bracket && second_bracket
-          path_dup[first_bracket..second_bracket] = args_hash[:id]
+        if args_hash.is_a?(Hash) && args_hash[:query]
+          path_dup[first_bracket..second_bracket] = args_hash[:query][:id] if args_hash[:query][:id] && first_bracket && second_bracket
+          path_dup += "?query=#{args_hash[:query][:search]}" if args_hash[:query][:search]
         end
 
         url = "#{get_server}#{path_dup}"
