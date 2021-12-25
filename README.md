@@ -41,7 +41,7 @@ client.use_token(
 )
 ```
 
-Then you're ready to make api calls like this:
+Then you're ready to make non-authentication api calls (api calls not related to obtaining/refreshing/revoking a token) like this:
 
 ``` ruby
 client.list_all_products
