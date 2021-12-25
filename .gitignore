@@ -15,4 +15,4 @@
 *.gemspec
 
 # don't include our openapi spec
-openapi.json
+# openapi.json
